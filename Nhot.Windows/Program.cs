@@ -3,7 +3,7 @@
 CancellationTokenSource cts = new();
 
 _ = Task.Run(() => 
-    new HotkeyService(VirtualKey.Space, KeyModifier.Alt, KeyModifier.Ctrl)
+    new WindowsHotkeyService(VirtualKey.Space, KeyModifier.Alt, KeyModifier.Ctrl)
         .Run(cts.Token), cts.Token);
 
 Console.WriteLine("Waiting for hotkey. Press Enter to exit.");

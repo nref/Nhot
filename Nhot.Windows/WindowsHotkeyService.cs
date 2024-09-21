@@ -2,7 +2,7 @@
 
 namespace Nhot;
 
-public class HotkeyService(VirtualKey Key, params KeyModifier[] ModifierKeys)
+public class WindowsHotkeyService(VirtualKey Key, params KeyModifier[] ModifierKeys)
 {
     private const int WM_HOTKEY = 0x0312;
     private const int HOTKEY_ID = 1;
