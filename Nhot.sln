@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nhot.Windows", "Nhot.Windows\Nhot.Windows.csproj", "{67FDDDC9-8801-4F24-A745-116A4B0D3EE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nhot.Linux", "Nhot.Linux\Nhot.Linux.csproj", "{7A331F38-CB55-4C88-B24D-0151C7FED758}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{67FDDDC9-8801-4F24-A745-116A4B0D3EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67FDDDC9-8801-4F24-A745-116A4B0D3EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67FDDDC9-8801-4F24-A745-116A4B0D3EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A331F38-CB55-4C88-B24D-0151C7FED758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A331F38-CB55-4C88-B24D-0151C7FED758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A331F38-CB55-4C88-B24D-0151C7FED758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A331F38-CB55-4C88-B24D-0151C7FED758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
