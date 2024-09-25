@@ -1,8 +1,9 @@
 using System.Runtime.InteropServices;
+using Nhot.Shared;
 
 namespace Nhot.Linux;
 
-public class X11HotkeyService
+public class X11HotkeyService : IHotkeyService
 {
     // More keys at https://github.com/golang-design/hotkey/blob/main/hotkey_linux.go
     private const int SpaceKey = 0x0020; // The keycode for the space key

@@ -1,4 +1,4 @@
-﻿namespace Nhot;
+﻿namespace Nhot.Shared;
 
 public interface IHotkeyService
 {

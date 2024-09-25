@@ -8,9 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GtkSharp" Version="3.24.24.95" />
     <PackageReference Include="SharpHook" Version="5.3.7" />
     <PackageReference Include="X11" Version="1.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nhot.Shared\Nhot.Shared.csproj" />
   </ItemGroup>
 
 </Project>

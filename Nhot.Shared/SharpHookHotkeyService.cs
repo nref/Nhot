@@ -2,9 +2,9 @@ using System.Collections.Concurrent;
 using SharpHook;
 using SharpHook.Native;
 
-namespace Nhot.Linux;
+namespace Nhot.Shared;
 
-public class SharpHookHotkeyService
+public class SharpHookHotkeyService : IHotkeyService
 { 
     private readonly ConcurrentDictionary<KeyCode, KeyCode> _keys = new();
     

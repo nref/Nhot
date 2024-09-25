@@ -1,4 +1,6 @@
-﻿namespace Nhot.Linux;
+﻿using Nhot.Shared;
+
+namespace Nhot.Linux;
 
 class Program
 {
@@ -10,30 +12,29 @@ class Program
     
     static void Main(string[] args)
     {
-        var backend = args switch
+        Backend backend = ParseBackend(args);
+        
+        IHotkeyService service = backend switch
         {
-            _ when args.Length == 0 => Backend.SharpHook,
-            _ when args[0] == "sharphook" => Backend.SharpHook,
-            _ when args[0] == "x11" => Backend.X11,
-            _ => Backend.SharpHook,
+            Backend.SharpHook => new SharpHookHotkeyService(),
+            _ => new X11HotkeyService(),
         };
         
         CancellationTokenSource cts = new();
-
-        if (backend == Backend.SharpHook)
-        {
-            _ = Task.Run(() =>
-                new SharpHookHotkeyService().Run(cts.Token), cts.Token);
-        }
-        else
-        {
-            _ = Task.Run(() =>
-                new X11HotkeyService().Run(cts.Token), cts.Token);
-        }
+        _ = Task.Run(() => service.Run(cts.Token), cts.Token);
 
         Console.WriteLine("Waiting for hotkey. Press Enter to exit.");
         Console.ReadLine();
 
         cts.Cancel();
     }
+
+    private static Backend ParseBackend(string[] args) =>
+        args switch
+        {
+            _ when args.Length == 0 => Backend.SharpHook,
+            _ when args[0] == "sharphook" => Backend.SharpHook,
+            _ when args[0] == "x11" => Backend.X11,
+            _ => Backend.SharpHook,
+        };
 }
